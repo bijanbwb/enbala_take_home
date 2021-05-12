@@ -7,9 +7,7 @@ defmodule ListOps do
 
   @spec count(list()) :: non_neg_integer()
   def count([]), do: 0
-
-  def count(l) do
-  end
+  def count([_head | tail]), do: 1 + count(tail)
 
   @spec reverse(list) :: list
   def reverse(l) do

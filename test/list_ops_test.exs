@@ -5,17 +5,14 @@ defmodule ListOpsTest do
 
   defp odd?(n), do: rem(n, 2) == 1
 
-  # @tag :pending
   test "count of empty list" do
     assert L.count([]) == 0
   end
 
-  @tag :pending
   test "count of normal list" do
     assert L.count([1, 3, 5, 7]) == 4
   end
 
-  @tag :pending
   test "count of huge list" do
     assert L.count(Enum.to_list(1..1_000_000)) == 1_000_000
   end
@@ -114,7 +111,6 @@ defmodule ListOpsTest do
 
   @tag :pending
   test "concat of empty list of lists" do
-
   end
 
   @tag :pending
