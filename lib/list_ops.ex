@@ -29,10 +29,10 @@ defmodule ListOps do
     end
   end
 
-  @type acc :: any
-  @spec reduce(list, acc, (any, acc -> acc)) :: acc
-  def reduce(l, acc, f) do
-  end
+  @type acc :: any()
+  @spec reduce(list(), acc(), (any(), acc() -> acc())) :: acc()
+  def reduce([], acc, _func), do: acc
+  def reduce([head | tail], acc, func), do: reduce(tail, func.(head, acc), func)
 
   @spec append(list, list) :: list
   def append(a, b) do
