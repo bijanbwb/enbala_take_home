@@ -16,6 +16,7 @@ defmodule ListOps do
 
   @spec map(list(), (any() -> any())) :: list()
   def map([], _func), do: []
+  def map([head | tail], func), do: [func.(head) | map(tail, func)]
 
   @spec filter(list, (any -> as_boolean(term))) :: list
   def filter(l, f) do
