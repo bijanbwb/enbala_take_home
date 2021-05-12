@@ -9,9 +9,10 @@ defmodule ListOps do
   def count([]), do: 0
   def count([_head | tail]), do: 1 + count(tail)
 
-  @spec reverse(list) :: list
-  def reverse(l) do
-  end
+  @spec reverse(list()) :: list()
+  def reverse(list), do: reverse(list, [])
+  defp reverse([], acc), do: acc
+  defp reverse([head | tail], acc), do: reverse(tail, [head | acc])
 
   @spec map(list, (any -> any)) :: list
   def map(l, f) do
