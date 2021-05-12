@@ -5,7 +5,9 @@ defmodule ListOps do
   # for adding numbers), but please do not use Kernel functions for Lists like
   # `++`, `--`, `hd`, `tl`, `in`, and `length`.
 
-  @spec count(list) :: non_neg_integer
+  @spec count(list()) :: non_neg_integer()
+  def count([]), do: 0
+
   def count(l) do
   end
 
